@@ -1,5 +1,6 @@
 import streamlit as st
 import openai
+import pandas as pd
 # Uncomment the following lines to enable the API key input form
 # Initialize
 st.cache_data.clear()
@@ -63,7 +64,12 @@ if st.button("À Table!"):
         recommendation = generate_cuisine_recommendation(
             meal_type, cuisune, flavor_preferred
         )
-        st.success(f"Recommended Dish: {recommendation}")
+        df = pd.DataFrame({
+            "Food Name": [f"Recommended Dish ({cuisine} - {meal_type} - {flavor_preferred})"],
+            "Information": [recommendation]
+        })
+        st.table(df)
+        #st.success(f"Recommended Dish: {recommendation}")
     else:
         st.warning("Please fill in all fields.")
 
