@@ -64,6 +64,7 @@ if st.button("À Table!"):
         recommendation = generate_cuisine_recommendation(
             meal_type, cuisine, flavor_preferred
         )
+        # Create a Pandas DataFrame to store the recommendation
         df = pd.DataFrame({
             "Food Name": [f"Recommended Dish ({cuisine} - {meal_type} - {flavor_preferred})"],
             "Information": [recommendation]
