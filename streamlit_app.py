@@ -44,12 +44,14 @@ def generate_cuisine_recommendation(cuisine, meal_type, flavor_preferred):
             {"role": "user", "content": f"You will help users find the best dishes and make notes from the context:{prompt}."},
         ]
     )
-    
-    return response.choices[0].message.content
+
+    recommendations = response.choices[0].message.content.split("1.")
+    return recommendations  
+
+    #return response.choices[0].message.content
 
 st.title("🍜 Dish For Today 🍚")
 st.markdown("<h2 style = 'font-size: 1.8rem'>What to eat? Let us help!</h2>",unsafe_allow_html=True)
-
 
 
 
@@ -64,16 +66,13 @@ num_recommendations = st.slider("Number of Recommendations", min_value=1, max_va
 
 if st.button("À Table!"):
     if meal_type and cuisine and flavor_preferred:
-        recommendations = []
-        for _ in range(num_recommendations):
-            recommendation = generate_cuisine_recommendation(
-                meal_type, cuisine, flavor_preferred
+        recommendations = generate_cuisine_recommendation(
+            meal_type, cuisine, flavor_preferred
         )
-            recommendations.append(recommendation)
         # Create a Pandas DataFrame to store the recommendation
         df = pd.DataFrame({
             "Food Name": [f"Dish {i+1}" for i in range(num_recommendations)],
-            "Information": recommendations
+            "Information": [recommendations[i].strip() for i in range(num_recommendations)]
         })
         
         st.table(df)
