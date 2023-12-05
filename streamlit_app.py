@@ -46,19 +46,19 @@ def generate_cuisine_recommendation(cuisine, meal_type, flavor_preferred):
     
     return response.choices[0].message.content
 
-st.title("Dish For Today")
-st.markdown("<h2 style = 'font-size: 1.8rem'>🍜 Dish For Today 🍚</h2>",unsafe_allow_html=True)
+st.title("🍜 Dish For Today 🍚")
+st.markdown("<h2 style = 'font-size: 1.8rem'>What to eat? Let us help!</h2>",unsafe_allow_html=True)
 
 
 
 
 # User input
-meal_type = st.text_input("Meal Type:")
-cuisune = st.text_input("Cuisine:")
-flavor_preferred = st.text_input("Flavor:")
+meal_type = st.text_input("Meal Type: (breakfast, lunch, dessert, etc.)")
+cuisune = st.text_input("Cuisine: (Italian, Japanese, Thai, etc.)")
+flavor_preferred = st.text_input("Flavor: (spicy, sweet, savory, etc.)")
 
 # Generate recommendation
-if st.button("Generate Recommendation"):
+if st.button("À Table!"):
     if meal_type and cuisune and flavor_preferred:
         recommendation = generate_cuisine_recommendation(
             meal_type, cuisune, flavor_preferred
