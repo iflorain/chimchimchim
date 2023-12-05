@@ -55,14 +55,14 @@ st.markdown("<h2 style = 'font-size: 1.8rem'>What to eat? Let us help!</h2>",uns
 
 # User input
 meal_type = st.text_input("Meal Type: (breakfast, lunch, dessert, etc.)")
-cuisune = st.text_input("Cuisine: (Italian, Japanese, Thai, etc.)")
+cuisine = st.text_input("Cuisine: (Italian, Japanese, Thai, etc.)")
 flavor_preferred = st.text_input("Flavor: (spicy, sweet, savory, etc.)")
 
 # Generate recommendation
 if st.button("À Table!"):
-    if meal_type and cuisune and flavor_preferred:
+    if meal_type and cuisine and flavor_preferred:
         recommendation = generate_cuisine_recommendation(
-            meal_type, cuisune, flavor_preferred
+            meal_type, cuisine, flavor_preferred
         )
         df = pd.DataFrame({
             "Food Name": [f"Recommended Dish ({cuisine} - {meal_type} - {flavor_preferred})"],
