@@ -64,17 +64,13 @@ num_recommendations = st.slider("Number of Recommendations", min_value=1, max_va
 
 if st.button("À Table!"):
     if meal_type and cuisine and flavor_preferred:
-        recommendations = []
-        for _ in range(num_recommendations):
-            recommendation = generate_cuisine_recommendation(
-                meal_type, cuisine, flavor_preferred
-        )
-            recommendations.append(recommendation)
-        # Create a Pandas DataFrame to store the recommendation
+        recommendations = [generate_cuisine_recommendation(meal_type, cuisine, flavor_preferred) for _ in range(num_recommendations)]
+
+        # Create a Pandas DataFrame with a row for each recommendation
         df = pd.DataFrame({
-            "Food Name": [f"Recommended Dish {i+1}" for i in range(num_recommendations)],
-            "Information": recommendations
+            f"Recommended Dish {i+1}": [recommendations[i]] for i in range(num_recommendations)
         })
+        
         st.table(df)
         #st.success(f"Recommended Dish: {recommendation}")
     else:
