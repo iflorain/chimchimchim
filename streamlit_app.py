@@ -58,17 +58,22 @@ meal_type = st.text_input("Meal Type: (breakfast, lunch, dessert, etc.)")
 cuisine = st.text_input("Cuisine: (Italian, Japanese, Thai, etc.)")
 flavor_preferred = st.text_input("Flavor: (spicy, sweet, savory, etc.)")
 
+# Generate multiple recommendations
+num_recommendations = st.slider("Number of Recommendations", min_value=1, max_value=5, value=3)
 # Generate recommendation
+
 if st.button("À Table!"):
     if meal_type and cuisine and flavor_preferred:
-        
-        recommendation = generate_cuisine_recommendation(
-            meal_type, cuisine, flavor_preferred
+        recommendations = []
+        for _ in range(num_recommendations):
+            recommendation = generate_cuisine_recommendation(
+                meal_type, cuisine, flavor_preferred
         )
+            recommendations.append(recommendation)
         # Create a Pandas DataFrame to store the recommendation
         df = pd.DataFrame({
-            "Food Name": [f"Recommended Dish ({cuisine} - {meal_type} - {flavor_preferred})"],
-            "Information": [recommendation]
+            "Food Name": [f"Recommended Dish {i+1}" for i in range(num_recommendations)],
+            "Information": recommendations
         })
         st.table(df)
         #st.success(f"Recommended Dish: {recommendation}")
