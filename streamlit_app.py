@@ -46,7 +46,8 @@ def generate_cuisine_recommendation(cuisine, meal_type, flavor_preferred):
         ]
     )
 
-    recommendations = re.split(r'\d+\.', response.choices[0].message.content)[1:]
+     # Extract individual recommendations using a regex pattern
+    recommendations = re.findall(r'\d+\.\s*([^\d]+)', response.choices[0].message.content)
     return recommendations  
 
     #return response.choices[0].message.content
