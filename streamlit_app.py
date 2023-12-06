@@ -100,7 +100,7 @@ if st.button("À Table!"):
         
         st.table(df)
         # Text below the DataFrame
-        st.markdown("<h2 style='font-size: 1.6rem; text-align: center; color: blue;'>What to eat? Let us help!</h2>", unsafe_allow_html=True)
+        st.markdown("<h2 style='font-size: 1.6rem; text-align: center; color: #1f4f82;'>What to eat? Let us help!</h2>", unsafe_allow_html=True)
         st.text("Food is our common ground, a universal experience")
         # Adding a styled header
         st.markdown("<h3 style='color: #1f4f82; text-align: center;'>Enjoy Your Meal!</h3>", unsafe_allow_html=True)
