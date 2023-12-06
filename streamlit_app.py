@@ -6,7 +6,7 @@ import pandas as pd
 st.markdown("""
     <style>
         body {
-            background-color: #fdfaeb;
+            background-color: #fdf4d4;
         }
     </style>
 """, unsafe_allow_html=True)
@@ -88,7 +88,7 @@ st.markdown("""
         /* Change button color */
         .stButton button {
             background-color: #1f4f82;
-            color: #fdfaeb; /* Change to your desired text color */
+            color: #fdf4d4; /* Change to your desired text color */
         }
     </style>
 """, unsafe_allow_html=True)
