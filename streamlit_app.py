@@ -32,7 +32,7 @@ with st.sidebar:
 
 def generate_cuisine_recommendation(cuisine, meal_type, flavor_preferred):
     # Customize the prompt based on your requirements
-    prompt = f"I feel like having {meal_type} {cuisine} food with a {flavor_preferred} flavor. What dishes do you recommend? give me at least 2. and write reasons for me why I chose this cuisine for this {meal_type}."
+    prompt = f"I feel like having {meal_type} {cuisine} food with a {flavor_preferred} flavor. What dishes do you recommend? give me as much as I need according to the num_recommendations. and write reasons for me why I chose this cuisine for this {meal_type}."
 
     # Call OpenAI API for recommendation
     response = openai.chat.completions.create(
