@@ -73,6 +73,22 @@ meal_type = st.text_input("Meal Type: (breakfast, lunch, dessert, etc.)")
 cuisine = st.text_input("Cuisine: (Italian, Japanese, Thai, etc.)")
 flavor_preferred = st.text_input("Flavor: (spicy, sweet, savory, etc.)")
 
+# Add custom HTML and CSS to change slider and button styles
+st.markdown("""
+    <style>
+        /* Change slider color */
+        .streamlit-slider {
+            background-color: #1f4f82;
+        }
+
+        /* Change button color */
+        .stButton button {
+            background-color: #1f4f82;
+            #color: #ffffff; /* Change to your desired text color */
+        }
+    </style>
+""", unsafe_allow_html=True)
+
 # Generate multiple recommendations
 num_recommendations = st.slider("How many recommendations do you need?", min_value=1, max_value=5, value=3)
 # Generate recommendation
