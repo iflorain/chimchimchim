@@ -84,7 +84,7 @@ st.markdown("""
         /* Change button color */
         .stButton button {
             background-color: #1f4f82;
-            #color: #ffffff; /* Change to your desired text color */
+            #color: #fdfaeb; /* Change to your desired text color */
         }
     </style>
 """, unsafe_allow_html=True)
