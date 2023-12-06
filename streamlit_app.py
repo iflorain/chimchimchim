@@ -61,7 +61,6 @@ def generate_cuisine_recommendation(cuisine, meal_type, flavor_preferred):
 
 st.title("🍜 Dish For Today 🍚")
 st.markdown("<h2 style='font-size: 1.8rem; color: #1f4f82;'>What to eat? Let us help!</h2>", unsafe_allow_html=True)
-st.markdown("<div style='background-color: #fae7e0; padding: 10px;'>This has a light pink background</div>", unsafe_allow_html=True)
 
 
 # User input
