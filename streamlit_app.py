@@ -88,10 +88,10 @@ if st.button("À Table!"):
             if i < len(recommendations):
                 df_data["Food Name"].append(f"Dish {i+1}")
                 df_data["Information"].append(recommendations[i].strip())
-            else:
+            #else:
                 # If there are fewer recommendations than requested, fill with placeholders
-                df_data["Food Name"].append(f"Dish {i+1}")
-                df_data["Information"].append("No recommendation available")
+                #df_data["Food Name"].append(f"Dish {i+1}")
+                #df_data["Information"].append("No recommendation available")
 
         df = pd.DataFrame(df_data)
         #df = pd.DataFrame({
