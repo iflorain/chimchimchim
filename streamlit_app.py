@@ -46,9 +46,15 @@ def generate_cuisine_recommendation(cuisine, meal_type, flavor_preferred):
         ]
     )
 
-     # Split the response into lines and filter those starting with numbers
-    recommendations = [line.strip() for line in response.choices[0].message.content.split('\n') if line.strip().startswith(('1.', '2.', '3.', '4.', '5.'))]
-    
+    # Split the response into lines and filter those starting with numbers
+    lines = response.choices[0].message.content.split('\n')
+    recommendations = []
+
+    for line in lines:
+        line = line.strip()
+        if line.startswith(('1.', '2.', '3.', '4.', '5.')):
+            recommendations.append(line)
+
     return recommendations
 
     #return response.choices[0].message.content
@@ -64,7 +70,7 @@ cuisine = st.text_input("Cuisine: (Italian, Japanese, Thai, etc.)")
 flavor_preferred = st.text_input("Flavor: (spicy, sweet, savory, etc.)")
 
 # Generate multiple recommendations
-num_recommendations = st.slider("Number of Recommendations", min_value=1, max_value=5, value=3)
+num_recommendations = st.slider("How many recommendations do you need?", min_value=1, max_value=5, value=3)
 # Generate recommendation
 
 if st.button("À Table!"):
