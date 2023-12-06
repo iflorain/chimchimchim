@@ -127,7 +127,7 @@ if st.button("À Table!"):
         st.markdown("<h2 style='font-size: 1.3rem; text-align: center; color: #1f4f82;'><em>Food is our common ground, a universal experience.</em></h2>", unsafe_allow_html=True)
         st.markdown("<h2 style='font-size: 1.3rem; text-align: center; color: #1f4f82;'><em>-- JAMES BEARD</em></h2>", unsafe_allow_html=True)
         # Adding a styled header
-        st.markdown("<h3 style='color: #f63366; text-align: center;'>Enjoy Your Meal!</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='color: #b12435; text-align: center;'>Enjoy Your Meal!</h3>", unsafe_allow_html=True)
         #st.success(f"Recommended Dish: {recommendation}")
     else:
         st.warning("Please fill in all fields.")
