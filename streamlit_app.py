@@ -1,6 +1,7 @@
 import streamlit as st
 import openai
 import pandas as pd
+import re
 # Uncomment the following lines to enable the API key input form
 # Initialize
 st.cache_data.clear()
@@ -45,7 +46,7 @@ def generate_cuisine_recommendation(cuisine, meal_type, flavor_preferred):
         ]
     )
 
-    recommendations = response.choices[0].message.content.split("1.")
+    recommendations = re.split(r'\d+\.', response.choices[0].message.content)[1:]
     return recommendations  
 
     #return response.choices[0].message.content
