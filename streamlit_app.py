@@ -2,14 +2,14 @@ import streamlit as st
 import openai
 import pandas as pd
 
-# Set the theme using the theme configuration
-st.set_page_config(
-    page_title="Dish For Today",
-    page_icon="🍚",
-    layout="wide",
-    initial_sidebar_state="expanded", 
-    theme="purple",  # Choose from "light" (default), "dark", "green", "blue", "orange", "purple", or "red"
-)
+# Add custom CSS for background styling
+st.markdown("""
+    <style>
+        body {
+            background-color: #fdfaeb;
+        }
+    </style>
+""", unsafe_allow_html=True)
 
 # Uncomment the following lines to enable the API key input form
 # Initialize
