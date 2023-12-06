@@ -61,6 +61,7 @@ def generate_cuisine_recommendation(cuisine, meal_type, flavor_preferred):
 
 st.title("🍜 Dish For Today 🍚")
 st.markdown("<h2 style='font-size: 1.8rem; color: #1f4f82;'>What to eat? Let us help!</h2>", unsafe_allow_html=True)
+st.markdown("<div style='background-color: #fae7e0; padding: 10px;'>This has a light pink background</div>", unsafe_allow_html=True)
 
 
 # User input
@@ -100,8 +101,7 @@ if st.button("À Table!"):
         
         st.table(df)
         # Text below the DataFrame
-        st.markdown("<h2 style='font-size: 1.6rem; text-align: center; color: #1f4f82;'>What to eat? Let us help!</h2>", unsafe_allow_html=True)
-        st.text("Food is our common ground, a universal experience")
+        st.markdown("<h2 style='font-size: 1.4rem; text-align: right; color: #1f4f82;'>Food is our common ground, a universal experience</h2>", unsafe_allow_html=True)
         # Adding a styled header
         st.markdown("<h3 style='color: #1f4f82; text-align: center;'>Enjoy Your Meal!</h3>", unsafe_allow_html=True)
         #st.success(f"Recommended Dish: {recommendation}")
