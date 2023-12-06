@@ -76,11 +76,6 @@ flavor_preferred = st.text_input("Flavor: (spicy, sweet, savory, etc.)")
 # Add custom HTML and CSS to change slider and button styles
 st.markdown("""
     <style>
-        /* Change slider color */
-        .streamlit-slider {
-            background-color: #1f4f82;
-        }
-
         /* Change button color */
         .stButton button {
             background-color: #1f4f82;
@@ -121,10 +116,10 @@ if st.button("À Table!"):
         
         st.table(df)
         # Text below the DataFrame
-        st.markdown("<h2 style='font-size: 1.3rem; text-align: center; color: #1f4f82;'>Food is our common ground, a universal experience</h2>", unsafe_allow_html=True)
-        st.markdown("<h2 style='font-size: 1.3rem; text-align: center; color: #1f4f82;'>- JAMES BREAD</h2>", unsafe_allow_html=True)
+        st.markdown("<h2 style='font-size: 1.3rem; text-align: center; color: #1f4f82;'><em>Food is our common ground, a universal experience.</em></h2>", unsafe_allow_html=True)
+        st.markdown("<h2 style='font-size: 1.3rem; text-align: center; color: #1f4f82;'><em>-- JAMES BREAD</em></h2>", unsafe_allow_html=True)
         # Adding a styled header
-        st.markdown("<h3 style='color: #b1413f; text-align: center;'>Enjoy Your Meal!</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='color: #f63366; text-align: center;'>Enjoy Your Meal!</h3>", unsafe_allow_html=True)
         #st.success(f"Recommended Dish: {recommendation}")
     else:
         st.warning("Please fill in all fields.")
