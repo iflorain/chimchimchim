@@ -60,7 +60,7 @@ def generate_cuisine_recommendation(cuisine, meal_type, flavor_preferred):
     #return response.choices[0].message.content
 
 st.title("🍜 Dish For Today 🍚")
-st.markdown("<h2 style='font-size: 1.8rem; color: blue;'>What to eat? Let us help!</h2>", unsafe_allow_html=True)
+st.markdown("<h2 style='font-size: 1.8rem; color: #1f4f82;'>What to eat? Let us help!</h2>", unsafe_allow_html=True)
 
 
 # User input
