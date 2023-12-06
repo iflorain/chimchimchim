@@ -61,13 +61,10 @@ def generate_cuisine_recommendation(cuisine, meal_type, flavor_preferred):
 
 # Add some custom HTML and CSS to center the title
 st.markdown("""
-    <style>
-        div.stTitle {
-            text-align: center;
-        }
-    </style>
+    <div style="text-align: center;">
+        <h1 style="font-size: 2.5em;">🍜 Dish For Today 🍚</h1>
+    </div>
 """, unsafe_allow_html=True)
-st.title("🍜 Dish For Today 🍚")
 st.markdown("<h2 style='font-size: 1.8rem; text-align: center; color: #1f4f82;'><em>What to eat? Let us help!</em></h2>", unsafe_allow_html=True)
 
 
