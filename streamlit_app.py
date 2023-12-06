@@ -2,14 +2,6 @@ import streamlit as st
 import openai
 import pandas as pd
 
-# Add custom CSS for background styling
-st.markdown("""
-    <style>
-        body {
-            background-color: #fdf4d4;
-        }
-    </style>
-""", unsafe_allow_html=True)
 
 # Uncomment the following lines to enable the API key input form
 # Initialize
@@ -88,7 +80,7 @@ st.markdown("""
         /* Change button color */
         .stButton button {
             background-color: #1f4f82;
-            color: #fdf4d4; /* Change to your desired text color */
+            color: #fdf8e3; /* Change to your desired text color */
         }
     </style>
 """, unsafe_allow_html=True)
@@ -122,7 +114,14 @@ if st.button("À Table!"):
             #"Food Name": [f"Dish {i+1}" for i in range(num_recommendations)],
         #    "Information": [recommendations[i].strip() for i in range(num_recommendations)]
         #})
-        
+        st.markdown("""
+    <style>
+        /* Change background color of the DataFrame table */
+        .dataframe {
+            background-color: #646d9e; /* Set your desired background color */
+        }
+    </style>
+""", unsafe_allow_html=True)
         st.table(df)
         # Text below the DataFrame
         st.markdown("<h2 style='font-size: 1.3rem; text-align: center; color: #1f4f82;'><em>Food is our common ground, a universal experience.</em></h2>", unsafe_allow_html=True)
