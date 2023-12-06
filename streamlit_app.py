@@ -79,10 +79,25 @@ if st.button("À Table!"):
             meal_type, cuisine, flavor_preferred
         )
         # Create a Pandas DataFrame to store the recommendation
-        df = pd.DataFrame({
-            "Food Name": [f"Dish {i+1}" for i in range(num_recommendations)],
-            "Information": [recommendations[i].strip() for i in range(num_recommendations)]
-        })
+        df_data = {
+            "Food Name": [],
+            "Information": []
+        }
+
+        for i in range(num_recommendations):
+            if i < len(recommendations):
+                df_data["Food Name"].append(f"Dish {i+1}")
+                df_data["Information"].append(recommendations[i].strip())
+            else:
+                # If there are fewer recommendations than requested, fill with placeholders
+                df_data["Food Name"].append(f"Dish {i+1}")
+                df_data["Information"].append("No recommendation available")
+
+        df = pd.DataFrame(df_data)
+        #df = pd.DataFrame({
+            #"Food Name": [f"Dish {i+1}" for i in range(num_recommendations)],
+        #    "Information": [recommendations[i].strip() for i in range(num_recommendations)]
+        #})
         
         st.table(df)
         #st.success(f"Recommended Dish: {recommendation}")
