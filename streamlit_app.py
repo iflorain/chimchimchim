@@ -46,9 +46,10 @@ def generate_cuisine_recommendation(cuisine, meal_type, flavor_preferred):
         ]
     )
 
-     # Extract individual recommendations using a regex pattern
-    recommendations = re.findall(r'\d+\.\s*([^\d]+)', response.choices[0].message.content)
-    return recommendations  
+     # Split the response into lines and filter those starting with numbers
+    recommendations = [line.strip() for line in response.choices[0].message.content.split('\n') if line.strip().startswith(('1.', '2.', '3.', '4.', '5.'))]
+    
+    return recommendations
 
     #return response.choices[0].message.content
 
