@@ -121,9 +121,10 @@ if st.button("À Table!"):
         
         st.table(df)
         # Text below the DataFrame
-        st.markdown("<h2 style='font-size: 1.4rem; text-align: right; color: #1f4f82;'>Food is our common ground, a universal experience</h2>", unsafe_allow_html=True)
+        st.markdown("<h2 style='font-size: 1.4rem; text-align: center; color: #1f4f82;'>Food is our common ground, a universal experience</h2>", unsafe_allow_html=True)
+        st.markdown("<h2 style='font-size: 1.4rem; text-align: center; color: #1f4f82;'>- JAMES BREAD</h2>", unsafe_allow_html=True)
         # Adding a styled header
-        st.markdown("<h3 style='color: #1f4f82; text-align: center;'>Enjoy Your Meal!</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='color: #b14a39; text-align: center;'>Enjoy Your Meal!</h3>", unsafe_allow_html=True)
         #st.success(f"Recommended Dish: {recommendation}")
     else:
         st.warning("Please fill in all fields.")
