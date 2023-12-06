@@ -2,6 +2,15 @@ import streamlit as st
 import openai
 import pandas as pd
 
+# Set the theme using the theme configuration
+st.set_page_config(
+    page_title="Dish For Today",
+    page_icon="🍚",
+    layout="wide",
+    initial_sidebar_state="expanded", 
+    theme="purple",  # Choose from "light" (default), "dark", "green", "blue", "orange", "purple", or "red"
+)
+
 # Uncomment the following lines to enable the API key input form
 # Initialize
 st.cache_data.clear()
@@ -117,7 +126,7 @@ if st.button("À Table!"):
         st.table(df)
         # Text below the DataFrame
         st.markdown("<h2 style='font-size: 1.3rem; text-align: center; color: #1f4f82;'><em>Food is our common ground, a universal experience.</em></h2>", unsafe_allow_html=True)
-        st.markdown("<h2 style='font-size: 1.3rem; text-align: center; color: #1f4f82;'><em>-- JAMES BREAD</em></h2>", unsafe_allow_html=True)
+        st.markdown("<h2 style='font-size: 1.3rem; text-align: center; color: #1f4f82;'><em>-- JAMES BEARD</em></h2>", unsafe_allow_html=True)
         # Adding a styled header
         st.markdown("<h3 style='color: #f63366; text-align: center;'>Enjoy Your Meal!</h3>", unsafe_allow_html=True)
         #st.success(f"Recommended Dish: {recommendation}")
