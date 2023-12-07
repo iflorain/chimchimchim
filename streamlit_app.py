@@ -96,8 +96,8 @@ if st.button("À Table!"):
         )
         # Create a Pandas DataFrame to store the recommendation
         df_data = {
-            "Food Name": [],
-            "Information": []
+            "Dish": [],
+            "Food Name": []
         }
 
         for i in range(num_recommendations):
